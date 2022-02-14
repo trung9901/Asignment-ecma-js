@@ -1,0 +1,206 @@
+{
+  "posts": [
+    {
+      "createdAt": "2022-01-10T07:26:52.549Z",
+      "title": "Annie Stroman",
+      "img": "http://placeimg.com/640/480/fashion",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+      "id": "1"
+    },
+    {
+      "createdAt": "2022-01-10T20:33:27.477Z",
+      "title": "Yolanda Roob",
+      "img": "http://placeimg.com/640/480/sports",
+      "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+      "id": "2"
+    },
+    {
+      "createdAt": "2022-01-11T03:36:13.571Z",
+      "title": "Rufus Konopelski",
+      "img": "http://placeimg.com/640/480/transport",
+      "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+      "id": "3"
+    },
+    {
+      "createdAt": "2022-01-10T04:45:32.422Z",
+      "title": "Ray Boyle",
+      "img": "http://placeimg.com/640/480/transport",
+      "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+      "id": "4"
+    },
+    {
+      "title": "1233124",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1644781953/img_upload/oosmt4ol7rwqjgzsz0g4.jpg",
+      "desc": "ghfgjfgj",
+      "id": "lEaLiYX"
+    }
+  ],
+  "users": [
+    {
+      "email": "trungnhph13487@fpt.edu.vn",
+      "password": "12345678",
+      "username": "trungnhph13487",
+      "id": 2
+    },
+    {
+      "email": "trung9901@gmail.com",
+      "password": "$2a$10$C9wAAMtTPq5Qvpl0ARSxJ.DUP.buiazkTzeiZWq2hyJrECQDtD8G2",
+      "username": "trung",
+      "id": 1
+    },
+    {
+      "email": "trung9902@gmail.com",
+      "password": "$2a$10$X.Glz93g0i9nT2zLyoLnYuPjL9Hy2TJQSyvrt./KYOq.ysH4rwguG",
+      "username": "zsdsfasf",
+      "id": 3
+    }
+  ],
+  "products": [
+    {
+      "productname": "sar pham 1",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 1
+    },
+    {
+      "productname": "sar pham 2",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 2
+    },
+    {
+      "productname": "sar pham 3",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 3
+    },
+    {
+      "productname": "sar pham 4",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 4
+    },
+    {
+      "productname": "sar pham 5",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 5
+    },
+    {
+      "productname": "sar pham 6",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 6
+    },
+    {
+      "productname": "sar pham 7",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 7
+    },
+    {
+      "productname": "sar pham 8",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 8
+    },
+    {
+      "productname": "sar pham 9",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 9
+    },
+    {
+      "productname": "sar pham 10",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 10
+    },
+    {
+      "productname": "sar pham 11",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 11
+    },
+    {
+      "productname": "sar pham 12",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 12
+    },
+    {
+      "productname": "sar pham 13",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 13
+    },
+    {
+      "productname": "sar pham 14",
+      "img": "https://picsum.photos/200/200",
+      "oldprice": "20000",
+      "newprice": "20000",
+      "id": 14
+    }
+  ],
+  "blog": [
+    {
+      "title": "Tặng ngay voucher 300k - Khi mua hàng online tại Mew Mall",
+      "img": "https://picsum.photos/100/66",
+      "date": "08/12/2021",
+      "id": 1
+    },
+    {
+      "title": "Tặng ngay voucher 300k - Khi mua hàng online tại Mew Mall",
+      "img": "https://picsum.photos/100/66",
+      "date": "08/12/2021",
+      "id": 2
+    },
+    {
+      "title": "Tặng ngay voucher 300k - Khi mua hàng online tại Mew Mall",
+      "img": "https://picsum.photos/100/66",
+      "date": "08/12/2021",
+      "id": 3
+    },
+    {
+      "title": "Tặng ngay voucher 300k - Khi mua hàng online tại Mew Mall",
+      "img": "https://picsum.photos/100/66",
+      "date": "08/12/2021",
+      "id": 4
+    }
+  ],
+  "category": [
+    {
+      "title": "Kệ sách - Kệ Tivi",
+      "img": "https://picsum.photos/60/60",
+      "id": 1
+    },
+    {
+      "title": "Thức ăn cho pet",
+      "img": "https://picsum.photos/60/60",
+      "id": 2
+    },
+    {
+      "title": "Thiết bị gia đình",
+      "img": "https://picsum.photos/60/60",
+      "id": 3
+    },
+    {
+      "title": "Gia dụng nhà bếp",
+      "img": "https://picsum.photos/60/60",
+      "id": 4
+    }
+  ]
+}
