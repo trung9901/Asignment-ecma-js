@@ -6,7 +6,8 @@ import NavAdmin from "../../../components/NavAdmin";
 import {
     reRender
 } from "../../../utils/rerender";
-
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 const AdminNewsPage = {
     async render() {
         const {
@@ -30,7 +31,7 @@ const AdminNewsPage = {
                     <a href="/admin/news/add" class="sm:ml-3">
                         <button
                             type="button"
-                            class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            class="add-btn inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             <!-- Heroicon name: solid/check -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,6 +101,13 @@ const AdminNewsPage = {
         `;
     },
     afterRender() {
+        // const fixAdd = document.querySelector('add-btn');
+        // fixAdd.addEventListener('click', () => {
+        //     location.reload();
+        // });
+
+
+
         // lấy toàn bộ danh sách button có class là .btn
         const buttons = document.querySelectorAll('.btn');
         // tạo vòng lặp để lấy ra từng button
@@ -110,12 +118,20 @@ const AdminNewsPage = {
             // dựa vào ID vừa lấy được
             button.addEventListener('click', () => {
                 const confirm = window.confirm("bạn có chắc muốn xóa không ?");
-                if (confirm) {
-                    remove(id).then(() => {
-                        console.log("Mày đã xóa thành công")
-                        reRender(AdminNewsPage, "#app");
-                    });
+                try {
+                    if (confirm) {
+                        remove(id).then(() => {
+
+                            reRender(AdminNewsPage, "#app");
+                            toastr.success("Bạn đã xóa thành công");
+                        });
+                    } else {
+                        toastr.error("Xóa thất bại !");
+                    }
+                } catch (error) {
+                    toastr.error(error.data);
                 }
+
             })
         });
     }

@@ -1,8 +1,12 @@
-import { get } from '../api/product';
+import {
+    get
+} from '../api/product';
 
-const DetailNewsPage = {
+const DetailProductPage = {
     async render(id) {
-        const { data } = await get(id);
+        const {
+            data
+        } = await get(id);
         return `
                 <h1>${data.productname}</h1>
                 <img src="${data.img}" />    
@@ -11,5 +15,4 @@ const DetailNewsPage = {
 
     },
 };
-export default DetailNewsPage;
-
+export default DetailProductPage;

@@ -1,10 +1,10 @@
 import Navigo from "navigo";
-import AdminEditPost from "./pages/admin/news/edit";
 import AboutPage from "./pages/about";
+import AdminEditPost from "./pages/admin/news/edit";
 import DashboardPage from "./pages/admin/dashboard";
 import AdminNewsPage from "./pages/admin/news";
 import AdminNewsAddPage from "./pages/admin/news/add";
-import DetailNewsPage from "./pages/detail";
+import DetailProductPage from "./pages/detail";
 import HomePage from "./pages/home";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin"
@@ -36,7 +36,7 @@ router.on("/admin/*", () => {}, {
 router.on({
     "/": () => print(HomePage),
     "/about": () => print(AboutPage),
-    "/products/:id": (value) => print(DetailNewsPage, value.data.id),
+    "/products/:id": (value) => print(DetailProductPage, value.data.id),
 
     "/admin/dashboard": () => print(DashboardPage),
     "/admin/news": () => print(AdminNewsPage),
