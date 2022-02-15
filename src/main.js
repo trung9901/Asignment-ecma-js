@@ -1,4 +1,5 @@
 import Navigo from "navigo";
+import AdminEditPost from "./pages/admin/news/edit";
 import AboutPage from "./pages/about";
 import DashboardPage from "./pages/admin/dashboard";
 import AdminNewsPage from "./pages/admin/news";

@@ -7,7 +7,7 @@ const HomePage = {
     async render() {
         return /* html */ `
                     <div class="w-auto bg-[#f4f4f4] ">
-                        <header class="" id="Header">
+                        <header class="" id="header">
                         ${await Header.render()}
                         </header>
                         ${await Contents.render()}
