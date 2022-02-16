@@ -4,11 +4,11 @@ import AdminEditPost from "./pages/admin/news/edit";
 import DashboardPage from "./pages/admin/dashboard";
 import AdminNewsPage from "./pages/admin/news";
 import AdminNewsAddPage from "./pages/admin/news/add";
-import DetailProductPage from "./pages/detail";
+import DetailProductPage from "./pages/products/detail";
 import HomePage from "./pages/home";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin"
-
+import ProductPage from "./pages/products";
 
 const router = new Navigo("/", {
     linksSelector: "a"
@@ -36,8 +36,8 @@ router.on("/admin/*", () => {}, {
 router.on({
     "/": () => print(HomePage),
     "/about": () => print(AboutPage),
-    "/products/:id": (value) => print(DetailProductPage, value.data.id),
-
+    "/products/details/:id": (value) => print(DetailProductPage, value.data.id),
+    "/products": () => print(ProductPage),
     "/admin/dashboard": () => print(DashboardPage),
     "/admin/news": () => print(AdminNewsPage),
     "/admin/news/:id/edit": ({

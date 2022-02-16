@@ -45,7 +45,7 @@ const Header = {
                             </a>
                             </li>
                             <li class=" ">
-                            <a href="/san-pham" title="Khuyến mãi Hot"
+                            <a href="/products" title="Sản phẩm"
                                 class="font-bold p-5 no-underline text-white pl-lg-3 hover:text-[#fdbf08] ">
                                 Sản phẩm
                             </a>

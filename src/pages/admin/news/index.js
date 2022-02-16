@@ -8,6 +8,7 @@ import {
 } from "../../../utils/rerender";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+
 const AdminNewsPage = {
     async render() {
         const {

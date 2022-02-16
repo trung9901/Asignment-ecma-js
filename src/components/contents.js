@@ -1,11 +1,15 @@
 import Banner from "./banner";
-import { getAll } from '../api/product';
+import {
+    getAll
+} from '../api/product';
 import Category from "./category";
 import LoadPost from "./loadposts";
 
 const Contents = {
-    async render(){
-        const { data } = await getAll();
+    async render() {
+        const {
+            data
+        } = await getAll();
         return /* html */ `
                 <div class="w-[1350px] mx-auto ">
                 ${await Banner.render()}
@@ -20,8 +24,8 @@ const Contents = {
                     <div class="py-5 grid gap-5 products">
                     ${data.map((products) => /* html */`
                             <div class="product-item">
-                            <div class=""><a href="/products/${products.id}"><img src="${products.img}" alt="" class="rounded-[10px]"></a></div>
-                            <div class="pt-1 py-3 "><a href="/products/${products.id}" class="no-underline "><span
+                            <div class=""><a href="/products/details/${products.id}"><img src="${products.img}" alt="" class="rounded-[10px]"></a></div>
+                            <div class="pt-1 py-3 "><a href="/products/details/${products.id}" class="no-underline "><span
                                 class="text-[#4c4c4c] font-bold hover:text-[#f53d2d]">${products.productname}</span></a></div>
                             <div class="">
                             <span class="font-bold text-[#f53d2d]">${products.newprice}₫</span>
@@ -42,4 +46,3 @@ const Contents = {
     }
 }
 export default Contents;
-

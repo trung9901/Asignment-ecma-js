@@ -1,6 +1,6 @@
 import {
     get
-} from '../api/product';
+} from '../../api/product';
 
 const DetailProductPage = {
     async render(id) {
@@ -11,6 +11,7 @@ const DetailProductPage = {
                 <h1>${data.productname}</h1>
                 <img src="${data.img}" />    
                 <p>${data.newprice}</p>
+                <button id="addCart">add to cart</button>
             `
 
     },
