@@ -8,7 +8,7 @@ import DetailProductPage from "./pages/products/detail";
 import HomePage from "./pages/home";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin"
-import ProductPage from "./pages/products";
+import ProductPage from "./pages/products/index";
 
 const router = new Navigo("/", {
     linksSelector: "a"

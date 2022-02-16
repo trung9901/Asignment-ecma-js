@@ -1,7 +1,9 @@
 import {
     get
 } from '../../api/product';
-
+import {
+    $
+} from '../../utils';
 const DetailProductPage = {
     async render(id) {
         const {
@@ -15,5 +17,10 @@ const DetailProductPage = {
             `
 
     },
+    afterRender() {
+        $("#addCart").addEventListener('click', () => {
+
+        });
+    }
 };
 export default DetailProductPage;
