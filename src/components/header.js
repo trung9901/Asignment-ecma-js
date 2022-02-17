@@ -84,7 +84,7 @@ const Header = {
     },
     afterRender() {
         const dashboard = document.querySelector('#dashboard')
-        if (dashboard) {
+        if (localStorage.getItem('user')) {
             if (JSON.parse(localStorage.getItem('user')).id === 1) {
                 dashboard.innerHTML = '<a href="/admin/dashboard" title="Liên hệ" class="font-bold p-5 no-underline text-white pl-lg-3 hover:text-[#fdbf08] "> dashboard</a>';
             }

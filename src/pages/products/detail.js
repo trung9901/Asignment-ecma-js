@@ -1,9 +1,15 @@
 import {
     get
-} from '../../api/product';
+} from '../../api/product'
 import {
     $
 } from '../../utils';
+import {
+    addToCart
+} from '../../utils/cart';
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
+
 const DetailProductPage = {
     async render(id) {
         const {
@@ -17,9 +23,18 @@ const DetailProductPage = {
             `
 
     },
-    afterRender() {
-        $("#addCart").addEventListener('click', () => {
-
+    afterRender(id) {
+        $("#addCart").addEventListener('click', async () => {
+            const {
+                data
+            } = await get(id);
+            addToCart(...{
+                data,
+                quantity: 1,
+                function () {
+                    toastr.success(`Thêm ${data.productname} vào giỏ hàng thành công !`)
+                }
+            })
         });
     }
 };

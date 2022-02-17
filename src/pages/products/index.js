@@ -3,7 +3,12 @@ import Footer from "../../components/footer";
 import {
   getAll
 } from "../../api/product";
-
+import {
+  $
+} from "../../utils";
+import {
+  addToCart
+} from '../../utils/cart';
 const ProductPage = {
   async render() {
     const {
@@ -302,7 +307,7 @@ const ProductPage = {
                         <div class="">
                           <div class="py-5 grid gap-3 " style="grid-template-columns: 1fr 1fr 1fr 1fr;">
                               ${data.map((products) => /* html */`
-                              <div class="product-item ">
+                              <div class="product-item mb-4">
                                 <div class=""><a href="/products/details/${products.id}"><img src="${products.img}" alt=""
                                       class="w-full"></a></div>
                                 <div class="pt-1 py-3 pl-2 "><a href="/products/details/${products.id}" class="no-underline "><span
@@ -310,7 +315,7 @@ const ProductPage = {
                                 <div class="pl-2">
                                   <span class="font-bold text-[#f53d2d]">${products.newprice}₫</span>
                                   <span class="line-through text-sm pl-1">${products.oldprice}₫</span>
-                                  <button class="ml-5 text-2xl" id="addCart" ><i class="fa fa-cart-plus"></i></button>
+                                  <button class="ml-14 text-2xl" id="addCart" ><i class="fa fa-cart-plus"></i></button>
                                 </div>
                               </div>
                               `).join("")}
@@ -327,10 +332,19 @@ const ProductPage = {
                   </div>
         `
   },
-  afterRender() {
+  afterRender(id) {
     Header.afterRender();
-    $("#addCart").addEventListener('click', () => {
-
+    $("#addCart").addEventListener('click', async () => {
+      const {
+        data
+      } = await get(id);
+      addToCart(...{
+        data,
+        quantity: 1,
+        function () {
+          toastr.success(`Thêm ${data.productname} vào giỏ hàng thành công !`)
+        }
+      })
     });
   }
 }
