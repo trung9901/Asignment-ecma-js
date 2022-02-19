@@ -4,13 +4,14 @@ import {
 import {
     $
 } from '../../utils';
-import {
-    addToCart
-} from '../../utils/cart';
+
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+import {
+    addToCart
+} from "../../utils/cart"
 const DetailProductPage = {
     async render(id) {
         const {
@@ -133,6 +134,7 @@ const DetailProductPage = {
             const {
                 data
             } = await get(id);
+
             addToCart(...{
                 data,
                 quantity: 1,
