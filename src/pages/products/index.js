@@ -10,10 +10,10 @@ import {
   addToCart
 } from '../../utils/cart';
 const ProductPage = {
-  async render() {
+  async render(id) {
     const {
       data
-    } = await getAll();
+    } = await getAll(id);
     return /* html */ `
                   <div class="w-auto bg-[#f4f4f4] ">
                   <header class="" id="header">
