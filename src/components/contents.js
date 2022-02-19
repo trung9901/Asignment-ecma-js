@@ -4,7 +4,14 @@ import {
 } from '../api/product';
 import Category from "./category";
 import LoadPost from "./loadposts";
-
+import {
+    $
+} from '../utils';
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
+import {
+    addToCart
+} from "../utils/cart"
 const Contents = {
     async render() {
         const {
@@ -24,13 +31,13 @@ const Contents = {
                     <div class="py-5 grid gap-5 products">
                     ${data.map((products) => /* html */`
                             <div class="product-item">
-                            <div class=""><a href="/products/details/${products.id}"><img src="${products.img}" alt="" class="rounded-[10px]"></a></div>
+                            <div class=""><a href="/products/details/${products.id}"><img src="${products.img}" alt="" class="rounded-[10px]" width="200"></a></div>
                             <div class="pt-1 py-3 "><a href="/products/details/${products.id}" class="no-underline "><span
                                 class="text-[#4c4c4c] font-bold hover:text-[#f53d2d]">${products.productname}</span></a></div>
                             <div class="">
                             <span class="font-bold text-[#f53d2d]">${products.newprice}₫</span>
                             <span class="line-through text-sm pl-1">${products.oldprice}₫</span>
-                            <button class="ml-5 text-2xl"><i class="fa fa-cart-plus"></i></button>
+                            
                             </div>
                                 
                             </div>
@@ -44,5 +51,6 @@ const Contents = {
                 </div>
         `
     }
+
 }
 export default Contents;

@@ -14,11 +14,13 @@ export const addToCart = (newProduct, next) => {
     next();
 }
 
-export const increaseItemInCart = (id) => {
+export const increaseItemInCart = (id, next) => {
     cart.find(product => product.id === id).quantity++;
     localStorage.setItem('cart', JSON.stringify(cart))
+    next();
 }
-export const decreaseItemInCart = (id) => {
+
+export const decreaseItemInCart = (id, next) => {
     const currenProduct = cart.find(product => product.id === id);
     currenProduct.quantity--;
     // nếu sản phẩm giảm nhỏ hơn 1 thì xóa
@@ -29,7 +31,9 @@ export const decreaseItemInCart = (id) => {
         }
     }
     localStorage.setItem('cart', JSON.stringify(cart))
+    next();
 }
+
 export const removeItemInCart = (id, next) => {
     const confirm = window.confirm('Bạn có muốn xóa sản phẩm này không?');
     if (confirm) {

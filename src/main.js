@@ -9,6 +9,7 @@ import HomePage from "./pages/home";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin"
 import ProductPage from "./pages/products";
+import CartPage from "./pages/cart"
 
 const router = new Navigo("/", {
     linksSelector: "a"
@@ -46,5 +47,6 @@ router.on({
     "/admin/news/add": () => print(AdminNewsAddPage),
     "/signup": () => print(Signup),
     "/signin": () => print(Signin),
+    "/cart": () => print(CartPage),
 });
 router.resolve();

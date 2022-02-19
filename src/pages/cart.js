@@ -1,126 +1,116 @@
 import {
-    $
-} from "../utils";
+    reRender
+} from "../utils/rerender";
 
 import {
     decreaseItemInCart,
     increaseItemInCart,
     removeItemInCart
 } from "../utils/cart";
-
-import {
-    reRender
-} from "../utils/rerender";
-
-
+import toastr from 'toastr';
+import "toastr/build/toastr.min.css";
+import Footer from "../components/footer";
+import Header from "../components/header";
 
 
 const CartPage = {
+    async render() {
+        let cart = [];
+        if (localStorage.getItem('cart')) {
+            cart = JSON.parse(localStorage.getItem('cart'));
 
-    render() {
-
-        const cart = JSON.parse(localStorage.getItem('cart'));
-
+        }
+        console.log(cart['']);
         return `
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Tên sản phẩm</th>
-
-                        <th>Price</th>
-
-                        <th></th>
-
-                        <th></th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
+                <div class="w-auto bg-[#f4f4f4] ">
+                <header class="" id="header">
+                ${await Header.render()}
+                </header>
+                <div class="w-[1350px] mx-auto ">
+                <main class="bg-white rounded-lg mt-5 p-5 grid grid-cols-12 gap-5">
+                  <section class="col-span-8">
+                    <!--  -->
                     ${cart.map(item => `
-
-                        <tr>
-
-                            <td>${item.name}</td>
-
-                            <td class="px-4">${item.price}
-
-                                
-
-                            </td>
-
-                            <td>
-
-                                <button  data-id="${item.id}" class="btn increase border border-black p-2">+</button>
-
-                                <button  data-id="${item.id}" class="btn decrease border border-black p-2">-</button>
-
-                            </td>
-
-                            <td>
-
-                                <button data-id="${item.id}" class="btn remove border bg-red-500 px-4 py-3 text-white">Remove</button>
-
-                            </td>
-
-                        </tr>
-
+                    <div class="border rounded-lg flex justify-between p-5 mb-5">
+                      <div class="flex">
+                        <figure class="w-20"><img src="${item.img}" alt=""></figure>
+                        <div class="px-5">
+                          <h3>${item.productname}</h3>
+                          <span class="text-red-600 mt-3">Giá: ${item.newprice} ₫</span>
+                          <div class="flex
+                           mt-3">
+                            <button data-id="${item.id}" class="btn btn-decrease px-2 py-1 border rounded-l-lg"><i
+                                class="fa-solid fa-minus"></i></button>
+                            <input type="number" value="${item.quantity}" class="border-y text-center w-20" />
+                            <button data-id="${item.id}" class="btn btn-increase px-2 py-1 border rounded-r-lg "><i
+                                class="fa-solid fa-plus"></i></button>
+                          </div>
+        
+                        </div>
+                      </div>
+                      <div class="">
+                        <span class="block font-bold text-red-600">${(item.newprice)*(item.quantity)} ₫</span>
+                        <button data-id="${item.id}"
+                          class="block float-right mt-8 border border-red-600 rounded px-3 py-2 text-sm text-red-500 hover:bg-red-600 hover:text-white">xóa</button>
+                      </div>
+                    </div>
                     `).join("")}
-
-                </tbody>
-
-                <tfoot>
-
-                    <tr><td colspan="2" class="text-right">Tổng là: <span id="total">null</span></td></tr>
-
-                </tfoot>
-
-            </table>
-
+                    <!--  -->
+                  </section>
+                  <section class="col-span-4">
+                    <div class="bg-yellow-400 border-0 rounded-lg p-5 flex justify-between ">
+                      <span class="text-white font-bold uppercase text-xl align-middle">TỔNG</span>
+                      <h1 class="text-white font-bold text-2xl align-middle">5.168.000 ₫</h1>
+                    </div>
+                    <div
+                      class="my-6 py-2 w-full border rounded-lg border-red-600 text-center hover:bg-red-600 hover:text-white text-red-600 uppercase font-bold">
+                      thanh toán
+                    </div>
+                    <div class="border border-dashed rounded-lg border-red-600 mt-5 bg-red-50 p-2">
+                      <h5 class="border-2 rounded-full border-red-600 p-1 px-3 w-fit text-red-600 font-bold "><i
+                          class="fa-solid fa-gift mr-2"></i>Code
+                        Ưu Đãi</h5>
+                      <div class="border-b border-dashed border-red-600">
+                        <p>Nhập mã <span class="font-bold">MEWMALL</span> để được giảm ngay 100k (áp dụng cho các đơn hàng
+                          trên 500k)</p>
+                        <button class="text-white font-bold border-0 rounded-full px-3 py-1 bg-orange-600 my-2">Sao
+                          chép</button>
+                      </div>
+                      <div class="">
+                        <p>Nhập mã <span class="font-bold">MEWMEWSN</span> để được giảm ngay 20% tổng giá trị đơn hàng. Số
+                          lượng có hạn</p>
+                        <button class="text-white font-bold border-0 rounded-full px-3 py-1 bg-orange-600 my-2">Sao
+                          chép</button>
+                      </div>
+        
+                    </div>
+                  </section>
+                </main>
+              </div>
+                <div class="bg-red-600 pt-1 mt-10"></div>
+                ${Footer.render()}
+                </div>
         `
-
     },
-
     afterRender() {
 
-        const btns = $('.btn');
-
+        // ---------------------
+        const btns = document.querySelectorAll('.btn');
         btns.forEach(btn => {
-
-            btn.addEventListener('click', function () {
-
-                const id = btn.dataset.id;
-
-                if (btn.classList.contains('increase')) {
-
-                    increaseItemInCart(id);
-
-                } else if (btn.classList.contains('decrease')) {
-
-                    decreaseItemInCart(id)
-
+            const id = btn.dataset.id;
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('btn-increase')) {
+                    increaseItemInCart(id, () => reRender(CartPage, "#app"))
+                } else if (btn.classList.contains('btn-decrease')) {
+                    decreaseItemInCart(id, () => reRender(CartPage, "#app"))
                 } else {
-
-                    removeItemInCart(id, function () {
-
+                    removeItemInCart(id, () => {
                         reRender(CartPage, "#app");
-
-                    });
-
+                        toastr.success("Bạn đã xóa sản phẩm thành công");
+                    })
                 }
-
             })
-
-        });
-
+        })
     }
-
 }
-
 export default CartPage;

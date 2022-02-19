@@ -47,10 +47,10 @@ const DetailProductPage = {
                                 <div class="flex my-1 ">
                                     <span class="font-bold my-3 ">Số lượng:</span>
                                     <div class="flex ml-3">
-                                    <button class="border rounded-lg px-4"><i class="fa-solid fa-minus"></i></button>
-                                    <input type="number" name="quantity" id="" min="1"
-                                        class="border rounded-lg mx-2 w-20 px-2 font-bold">
-                                    <button class="border rounded-lg px-4"><i class="fa-solid fa-plus"></i></button>
+                               
+                                    <input type="number" name="quantity" id="inputValue" min="1" value="1"
+                                        class="border rounded-lg mx-2 w-20 pl-5 font-bold">
+                                   
             
                                     </div>
                                 </div>
@@ -130,17 +130,17 @@ const DetailProductPage = {
 
     },
     afterRender(id) {
+        Header.afterRender();
+        const inputValue = document.querySelector('#inputValue');
         $("#addCart").addEventListener('click', async () => {
             const {
                 data
             } = await get(id);
-
-            addToCart(...{
-                data,
-                quantity: 1,
-                function () {
-                    toastr.success(`Thêm ${data.productname} vào giỏ hàng thành công !`)
-                }
+            addToCart({
+                ...data,
+                quantity: inputValue.value ? +inputValue.value : 1,
+            }, function () {
+                toastr.success("Thêm vào giỏ hàng thành công!");
             })
         });
     }

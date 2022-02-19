@@ -1,11 +1,12 @@
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import {
-  getAll
-} from "../../api/product";
-import {
   $
 } from "../../utils";
+import {
+  getAll
+} from "../../api/product";
+
 import {
   addToCart
 } from '../../utils/cart';
@@ -315,7 +316,7 @@ const ProductPage = {
                                 <div class="pl-2">
                                   <span class="font-bold text-[#f53d2d]">${products.newprice}₫</span>
                                   <span class="line-through text-sm pl-1">${products.oldprice}₫</span>
-                                  <button class="ml-14 text-2xl" id="addCart" ><i class="fa fa-cart-plus"></i></button>
+
                                 </div>
                               </div>
                               `).join("")}
@@ -334,18 +335,19 @@ const ProductPage = {
   },
   afterRender(id) {
     Header.afterRender();
-    $("#addCart").addEventListener('click', async () => {
-      const {
-        data
-      } = await get(id);
-      addToCart(...{
-        data,
-        quantity: 1,
-        function () {
-          toastr.success(`Thêm ${data.productname} vào giỏ hàng thành công !`)
-        }
-      })
-    });
+    const inputValue = document.querySelector('#inputValue');
+
+    // $("#addCart").addEventListener('click', async () => {
+    //   const {
+    //     data
+    //   } = await get(id);
+    //   addToCart({
+    //     ...data,
+    //     quantity: inputValue.value ? +inputValue.value : 1,
+    //   }, function () {
+    //     toastr.success("Thêm vào giỏ hàng thành công!");
+    //   })
+    // });
   }
-}
+};
 export default ProductPage;
