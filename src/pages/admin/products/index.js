@@ -29,7 +29,7 @@ const AdminProductPage = {
                             </h2>
                         </div>
                         <div class="mt-5 flex lg:mt-0 lg:ml-4">
-                            <a href="/admin/products/add" class="sm:ml-3">
+                            <a href="/#/admin/products/add" class="sm:ml-3">
                                 <button
                                     type="button"
                                     class="add-btn inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -98,7 +98,7 @@ const AdminProductPage = {
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="/admin/products/${product.id}/edit" class="text-white hover:bg-black  border-0 rounded bg-green-600 py-2 px-3"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="/#/admin/products/${product.id}/edit" class="text-white hover:bg-black  border-0 rounded bg-green-600 py-2 px-3"><i class="fa-solid fa-pen-to-square"></i></a>
                                         
                                         <button data-id=${product.id} class="btn btn-remove text-white hover:bg-black border-0 rounded bg-red-600 py-2 px-3"><i class="fa-solid fa-trash-can"></i></button>
                                 

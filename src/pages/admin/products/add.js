@@ -41,7 +41,7 @@ const AdminProductsAddPage = {
                     </header>
                     <main class="container mx-auto mt-10 px-40 ">
                         <div class="mt-5 md:mt-0 md:col-span-2 ">
-                        <form  id="form-add-products">
+                        <form action="" id="form-add-products">
                             <div class="shadow sm:rounded-md sm:overflow-hidden">
                             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                                 <div class="grid grid-cols-3 gap-6">
@@ -97,55 +97,51 @@ const AdminProductsAddPage = {
         `
     },
     afterRender() {
-        const formAdd = document.querySelector('#form-add-products');
-        const priceProducts = $("#price-products").value;
-        const quantityProducts = $("#quantity-products").value;
-        const discountProducts = $("#discount-products").value;
-        const nameProducts = $("#name-products").value;
-        const imgProducts = $("#img-products");
-        const imgPreview = $('#previewImage');
+        const formAdd = $('#form-add-products');
+        const imgProducts = document.querySelector("#img-products");
+        const imgPreview = document.querySelector('#previewImage');
         const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/dneaxae9c/image/upload";
         const CLOUDINARY_PRESET = "img_upload";
+        let imgLink = "";
 
-        imgProducts.addEventListener("change", (e) => {
-            imgPreview.src = URL.createObjectURL(imgProducts.files[0])
+        imgProducts.addEventListener("change", function (e) {
+            imgPreview.src = URL.createObjectURL(e.target.files[0])
         });
 
-        $("#form-add-products").validate({
-            rules: {
-                "nameProducts": "required"
-            },
-            messages: {
-                "nameProducts": "Nhập tên sản phẩm"
-            },
-            submitHandler: async (form) => {
-                const file = imgProducts.files[0];
-                const formData = new FormData();
+        formAdd.validate({
+            submitHandler() {
+                async function addProduct() {
+                    const file = imgProducts.files[0];
+                    if (file) {
+                        const formData = new FormData();
 
-                formData.append('file', file);
-                formData.append('upload_preset', CLOUDINARY_PRESET)
-                const {
-                    data
-                } = await axios({
-                    url: CLOUDINARY_API,
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/x-www-formendcoded",
-                    },
-                    data: formData,
-                })
-                add({
-                        productname: nameProducts,
-                        price: priceProducts,
-                        discount: discountProducts,
-                        quantity: quantityProducts,
-                        img: data.url
+                        formData.append('file', file);
+                        formData.append('upload_preset', CLOUDINARY_PRESET)
+                        const {
+                            data
+                        } = await axios.post(CLOUDINARY_API, formData, {
+                            headers: {
+                                "Content-Type": "application/form-data"
+                            }
+
+                        });
+                        imgLink = data.url;
+                    }
+                    add({
+                        "productname": document.querySelector("#name-products").value,
+                        "price": document.querySelector("#price-products").value,
+                        "discount": document.querySelector("#discount-products").value,
+                        "quantity": document.querySelector("#quantity-products").value,
+                        "img": imgLink || "",
+                    }).then(async (res) => {
+                        document.location.href = "/#/admin/products";
+                        await reRender(AdminProductsPage, "#app");
                     })
-                    .then((result) => console.log(result.data))
-                    .catch((error) => console.log(error));
-
+                }
+                addProduct();
             }
         })
+
 
     }
 }

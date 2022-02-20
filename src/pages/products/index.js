@@ -309,9 +309,9 @@ const ProductPage = {
                           <div class="py-5 grid gap-3 " style="grid-template-columns: 1fr 1fr 1fr 1fr;">
                               ${data.map((products) => /* html */`
                               <div class="product-item mb-4">
-                                <div class=""><a href="/products/details/${products.id}"><img src="${products.img}" alt=""
+                                <div class=""><a href="/#/products/details/${products.id}"><img src="${products.img}" alt=""
                                       class="w-full"></a></div>
-                                <div class="pt-1 py-3 pl-2 "><a href="/products/details/${products.id}" class="no-underline "><span
+                                <div class="pt-1 py-3 pl-2 "><a href="/#/products/details/${products.id}" class="no-underline "><span
                                       class="text-[#4c4c4c] font-bold hover:text-[#f53d2d]">${products.productname}</span></a></div>
                                 <div class="pl-2">
                                 <span class="font-bold text-[#f53d2d]">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format((products.price)-(((products.price)*(products.discount))/100))}</span>

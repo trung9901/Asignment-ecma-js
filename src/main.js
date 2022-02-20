@@ -13,7 +13,8 @@ import CartPage from "./pages/cart"
 import AdminProductPage from "./pages/admin/products"
 import AdminProductsAddPage from "./pages/admin/products/add";
 const router = new Navigo("/", {
-    linksSelector: "a"
+    linksSelector: "a",
+    hash: true
 });
 
 const print = async (content, id) => {

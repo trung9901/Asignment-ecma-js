@@ -34,36 +34,36 @@ const Header = {
                         <div class="mt-5 mb-5">
                         <ul id="menu_pc" class="flex list-none">
                             <li class="nav-item ">
-                            <a href="/" title="Trang chủ" class="font-bold pr-5 no-underline text-white hover:text-[#fdbf08] ">
+                            <a href="/#/" title="Trang chủ" class="font-bold pr-5 no-underline text-white hover:text-[#fdbf08] ">
                                 Trang chủ
                             </a>
                             </li>
                             <li class=" nav-item">
-                            <a href="/about" title="Giới thiệu"
+                            <a href="/#/about" title="Giới thiệu"
                                 class="font-bold p-5 no-underline text-white pl-lg-3 hover:text-[#fdbf08] ">
                                 Giới thiệu
                             </a>
                             </li>
                             <li class=" ">
-                            <a href="/products" title="Sản phẩm"
+                            <a href="/#/products" title="Sản phẩm"
                                 class="font-bold p-5 no-underline text-white pl-lg-3 hover:text-[#fdbf08] ">
                                 Sản phẩm
                             </a>
                             </li>
                             <li class=" ">
-                            <a href="/tin-tuc" title="Tin tức"
+                            <a href="/#/tin-tuc" title="Tin tức"
                                 class="font-bold p-5 no-underline text-white pl-lg-3 hover:text-[#fdbf08] ">
                                 Tin tức
                             </a>
                             </li>
                             <li class=" ">
-                            <a href="/tuyen-dung" title="Tuyển dụng"
+                            <a href="/#/tuyen-dung" title="Tuyển dụng"
                                 class="font-bold p-5 no-underline text-white pl-lg-3 hover:text-[#fdbf08] ">
                                 Khuyến mãi hot
                             </a>
                             </li>
                             <li class=" ">
-                            <a href="/lien-he" title="Liên hệ"
+                            <a href="/#/lien-he" title="Liên hệ"
                                 class="font-bold p-5 no-underline text-white pl-lg-3 hover:text-[#fdbf08] ">
                                 Liên hệ
                             </a>

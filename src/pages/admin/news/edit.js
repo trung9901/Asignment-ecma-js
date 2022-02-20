@@ -9,6 +9,10 @@ import {
     reRender
 } from "../../../utils/rerender";
 import axios from "axios";
+import $ from 'jquery';
+import validate from 'jquery-validation';
+import AdminNewsPage from './index';
+
 const AdminEditPost = {
     async render(id) {
         const {
@@ -54,49 +58,65 @@ const AdminEditPost = {
                                 <div class="py-2">
                                 <label for=""  class=" block text-xl text-gray-700 font-bold">Hình ảnh</label>
                                 <input type="file" class="border border-gray-700 rounded" id="img-post">
-                                <img src="${data.img}" class="float-right" width="300">
+                                <img src="${data.img}" class="float-right" width="300" id="previewImage">
                                 </div>
                                 <div class="py-2">
                                 <label for=""  class=" block text-xl text-gray-700 font-bold">Mô tả</label>
                                 <textarea name="" id="desc-post" cols="30" rows="10" class="border border-gray-700 rounded w-96 p-1">${data.desc}</textarea>
-                                
-
+                            
                                 </div>
                                 <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cập nhật</button>
                             </form>
                             
                         </div>
+
                         </main>
                     </div>
         `
     },
     afterRender(id) {
-        const formEdit = document.querySelector('#form-edit-post');
+        const formEdit = $('#form-edit-post');
         const imgPost = document.querySelector('#img-post');
-
+        const imgPreview = document.querySelector('#previewImage');
         const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/dneaxae9c/image/upload";
         const CLOUDINARY_PRESET = "img_upload";
+        let imgLink = "";
 
-        formEdit.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const file = imgPost.files[0];
-            const formData = new FormData();
-            formData.append('file', file);
-            formData.append('upload_preset', CLOUDINARY_PRESET)
+        imgPost.addEventListener("change", function (e) {
+            imgPreview.src = URL.createObjectURL(e.target.files[0])
+        });
 
-            const response = await axios.post(CLOUDINARY_API, formData, {
-                headers: {
-                    "Content-Type": "application/form-data"
+        formEdit.validate({
+            submitHandler() {
+                async function updateNews() {
+                    const file = imgPost.files[0];
+                    if (file) {
+                        const formData = new FormData();
+                        formData.append('file', file);
+                        formData.append('upload_preset', CLOUDINARY_PRESET)
+
+                        const {
+                            data
+                        } = await axios.post(CLOUDINARY_API, formData, {
+                            headers: {
+                                "Content-Type": "application/form-data"
+                            }
+                        })
+                        imgLink = data.url;
+                    }
+                    update({
+                        id,
+                        title: document.querySelector('#title-post').value,
+                        img: imgLink ? imgLink : imgPreview.src,
+                        desc: document.querySelector('#desc-post').value
+                    }).then(async (res) => {
+                        document.location.href = "/#/admin/news";
+                        await reRender(AdminNewsPage, "#app");
+                    })
                 }
-            })
-            update({
-                id,
-                "title": document.querySelector('#title-post').value,
-                "img": response.data.url,
-                "desc": document.querySelector('#desc-post').value
-            })
-            document.location.href = "/admin/news";
-            await reRender(AdminNewsPage, "#app");
+                updateNews();
+            }
+
         })
     }
 };
