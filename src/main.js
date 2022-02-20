@@ -10,7 +10,8 @@ import Signup from "./pages/signup";
 import Signin from "./pages/signin"
 import ProductPage from "./pages/products";
 import CartPage from "./pages/cart"
-
+import AdminProductPage from "./pages/admin/products"
+import AdminProductsAddPage from "./pages/admin/products/add";
 const router = new Navigo("/", {
     linksSelector: "a"
 });
@@ -45,8 +46,12 @@ router.on({
         data
     }) => print(AdminEditPost, data.id),
     "/admin/news/add": () => print(AdminNewsAddPage),
+    "/admin/products": () => print(AdminProductPage),
+    "/admin/products/add": () => print(AdminProductsAddPage),
+
     "/signup": () => print(Signup),
     "/signin": () => print(Signin),
     "/cart": () => print(CartPage),
+
 });
 router.resolve();

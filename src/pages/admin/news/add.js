@@ -10,7 +10,7 @@ import {
 const AdminNewsAddPage = {
   render() {
     return /* html */ `
-        <div class="min-h-full">
+        <div class="min-h-full bg-slate-300 pb-40 ">
             ${NavAdmin.render()}
             <header class="bg-white shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -29,9 +29,7 @@ const AdminNewsAddPage = {
                             type="button"
                             class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             <!-- Heroicon name: solid/check -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                            </svg>
+
                             Quay lại
                         </button>
                     </a>
@@ -39,24 +37,25 @@ const AdminNewsAddPage = {
                 </div>
             </div>
             </header>
-            <main>
-            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 border rounded border-gray-500">
+            <main class="">
+            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 border rounded border-gray-300 mt-10 bg-white">
                 <form action="" id="form-add-post">
                     <div>
-                    <label for="" class=" block text-xl text-gray-700 font-bold">Tiêu đề</label>
-                    <input type="text" placeholder="Tiêu đề bài viết" class="border border-gray-700 rounded py-1 px-3" id="title-post">
+                    <label for="" class=" block text-lg text-gray-700 font-medium">Tiêu đề</label>
+                    <input type="text" placeholder="Tiêu đề bài viết" class="border border-gray-300 rounded py-1 px-3" id="title-post">
                     </div>
                     <div class="py-2">
-                     <label for=""  class=" block text-xl text-gray-700 font-bold">Hình ảnh</label>
-                     <input type="file" class="border border-gray-700 rounded" id="img-post">
+                     <label for=""  class=" block text-lg text-gray-700 font-medium">Hình ảnh</label>
+                     <input type="file" class="border border-gray-300 rounded" id="img-post">
                     </div>
                     <div class="py-2">
-                      <label for=""  class=" block text-xl text-gray-700 font-bold">Mô tả</label>
-                      <textarea name="" id="desc-post" cols="30" rows="10" class="border border-gray-700 rounded w-96 p-1"></textarea>
-                      
+                      <label for=""  class=" block text-lg text-gray-700 font-medium">Mô tả</label>
+                      <textarea name="" id="desc-post" cols="30" rows="10" class="border border-gray-300 rounded w-96 p-1"></textarea>
 
                     </div>
-                    <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thêm</button>
+                    <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">                            <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>Thêm mới</button>
                 </form>
             </div>
             </main>

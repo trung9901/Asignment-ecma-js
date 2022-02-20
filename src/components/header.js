@@ -28,7 +28,7 @@ const Header = {
                         <div class="flex pt-2">
                             <div class="text-white font-bold " id="check-user">${localStorage.getItem('user') ? `<span class=" hover:text-[#fdbf08]" id="account-email"></span><span class="mx-1">/</span><span id="logout" class=" hover:text-[#fdbf08]"> Đăng xuất</span>`: `<a href="/signin" class=" hover:text-[#fdbf08]">Đăng nhập</a><span class="mx-1">/</span><a href="/signup" class=" hover:text-[#fdbf08]">Đăng ký</a>`}</div>                      
                             <span class="text-white font-bold mx-4">|</span>
-                            <div class="text-white font-bold hover:text-[#fdbf08]"><a href="/cart">Giỏ hàng</a></div>
+                            <div class="text-white font-bold hover:text-[#fdbf08]"><a href="/cart" >Giỏ hàng</a></div>
                         </div>
                         </div>
                         <div class="mt-5 mb-5">
@@ -86,7 +86,7 @@ const Header = {
         const dashboard = document.querySelector('#dashboard')
         if (localStorage.getItem('user')) {
             if (JSON.parse(localStorage.getItem('user')).id === 1) {
-                dashboard.innerHTML = '<a href="/admin/dashboard" title="Liên hệ" class="font-bold p-5 no-underline text-white pl-lg-3 hover:text-[#fdbf08] "> dashboard</a>';
+                dashboard.innerHTML = '<a href="/admin/dashboard" title="Liên hệ" target="_blank" class="font-bold p-5 no-underline text-white pl-lg-3 hover:text-[#fdbf08] "> dashboard</a>';
             }
         } else {
             dashboard.innerHTML = '';

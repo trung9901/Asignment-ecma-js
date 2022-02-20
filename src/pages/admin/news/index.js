@@ -83,9 +83,9 @@ const AdminNewsPage = {
                                     ${posts.desc}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="/admin/news/${posts.id}/edit" class="text-white hover:bg-black  border-0 rounded bg-green-600 p-2">Edit</a>
+                                <a href="/admin/news/${posts.id}/edit" class="text-white hover:bg-black  border-0 rounded bg-green-600 py-2 px-3"><i class="fa-solid fa-pen-to-square"></i></a>
                                 
-                                <button data-id=${posts.id} class="btn btn-remove text-white hover:bg-black border-0 rounded bg-red-600 p-2">Remove</button>
+                                <button data-id=${posts.id} class="btn btn-remove text-white hover:bg-black border-0 rounded bg-red-600 py-2 px-3"><i class="fa-solid fa-trash-can"></i></button>
                            
                                 </td>
                             </tr>

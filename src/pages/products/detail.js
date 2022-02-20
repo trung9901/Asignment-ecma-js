@@ -39,7 +39,7 @@ const DetailProductPage = {
                             <hr class="my-5">
                             <div class="">
                                 <span class="text-base">Nội dung đang cập nhật...</span>
-                                <h1 class="text-red-500 text-3xl font-bold bg-gray-100 rounded-lg p-3 mt-5">${data.newprice}₫</h1>
+                                <h1 class="text-red-500 text-3xl font-bold bg-gray-100 rounded-lg p-3 mt-5">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format((data.price)-(((data.price)*(data.discount))/100))}</h1>
                             </div>
                             <div class="my-3">
                                 <div class="">

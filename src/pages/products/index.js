@@ -314,9 +314,8 @@ const ProductPage = {
                                 <div class="pt-1 py-3 pl-2 "><a href="/products/details/${products.id}" class="no-underline "><span
                                       class="text-[#4c4c4c] font-bold hover:text-[#f53d2d]">${products.productname}</span></a></div>
                                 <div class="pl-2">
-                                  <span class="font-bold text-[#f53d2d]">${products.newprice}₫</span>
-                                  <span class="line-through text-sm pl-1">${products.oldprice}₫</span>
-
+                                <span class="font-bold text-[#f53d2d]">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format((products.price)-(((products.price)*(products.discount))/100))}</span>
+                                <span class="line-through text-sm pl-1">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(products.price)}</span>
                                 </div>
                               </div>
                               `).join("")}

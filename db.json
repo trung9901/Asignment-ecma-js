@@ -1,5 +1,6 @@
 {
-  "posts": [{
+  "posts": [
+    {
       "id": "1",
       "title": "Annie Stroman4",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1644889701/img_upload/x7ifsvlagta26nbhchvn.jpg",
@@ -39,7 +40,8 @@
       "id": "GUMH1Ia"
     }
   ],
-  "users": [{
+  "users": [
+    {
       "email": "trungnhph13487@fpt.edu.vn",
       "password": "12345678",
       "username": "trungnhph13487",
@@ -58,106 +60,130 @@
       "id": 3
     }
   ],
-  "products": [{
-      "productname": "sar pham 1",
+  "products": [
+    {
+      "productname": "san pham 1",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "1"
     },
     {
-      "productname": "sar pham 2",
+      "productname": "san pham 2",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "2"
     },
     {
-      "productname": "sar pham 3",
+      "productname": "san pham 3",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "3"
     },
     {
-      "productname": "sar pham 4",
+      "productname": "san pham 4",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "4"
     },
     {
-      "productname": "sar pham 5",
+      "productname": "san pham 5",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "5"
     },
     {
-      "productname": "sar pham 6",
+      "productname": "san pham 6",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "6"
     },
     {
-      "productname": "sar pham 7",
+      "productname": "san pham 7",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "7"
     },
     {
-      "productname": "sar pham 8",
+      "productname": "san pham 8",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "8"
     },
     {
-      "productname": "sar pham 9",
+      "productname": "san pham 9",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "9"
     },
     {
-      "productname": "sar pham 10",
+      "productname": "san pham 10",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "10"
     },
     {
-      "productname": "sar pham 11",
+      "productname": "san pham 11",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "11"
     },
     {
-      "productname": "sar pham 12",
+      "productname": "san pham 12",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "12"
     },
     {
-      "productname": "sar pham 13",
+      "productname": "san pham 13",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "13"
     },
     {
-      "productname": "sar pham 14",
+      "productname": "san pham 14",
       "img": "https://picsum.photos/200/200",
-      "oldprice": "20000",
-      "newprice": "20000",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
       "id": "14"
+    },
+    {
+      "productname": "san pham 15",
+      "img": "https://picsum.photos/200/200",
+      "price": "500000",
+      "discount": "20",
+      "quantity": "100",
+      "id": "15"
     }
   ],
-  "blog": [{
+  "blog": [
+    {
       "title": "Tặng ngay voucher 300k - Khi mua hàng online tại Mew Mall",
       "img": "https://picsum.photos/100/100",
       "date": "08/12/2021",
@@ -182,7 +208,8 @@
       "id": 4
     }
   ],
-  "category": [{
+  "category": [
+    {
       "title": "Kệ sách - Kệ Tivi",
       "img": "https://picsum.photos/60/60",
       "id": 1
