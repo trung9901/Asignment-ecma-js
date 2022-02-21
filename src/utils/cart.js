@@ -28,6 +28,8 @@ export const decreaseItemInCart = (id, next) => {
         const confirm = window.confirm('Bạn có muốn xóa sản phẩm này không?');
         if (confirm) {
             cart = cart.filter(item => item.id !== currenProduct.id);
+        } else {
+            currenProduct.quantity++;
         }
     }
     localStorage.setItem('cart', JSON.stringify(cart))
@@ -42,3 +44,5 @@ export const removeItemInCart = (id, next) => {
     localStorage.setItem('cart', JSON.stringify(cart));
     next();
 }
+
+// -----------------------

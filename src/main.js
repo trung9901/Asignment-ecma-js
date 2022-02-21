@@ -12,6 +12,9 @@ import ProductPage from "./pages/products";
 import CartPage from "./pages/cart"
 import AdminProductPage from "./pages/admin/products"
 import AdminProductsAddPage from "./pages/admin/products/add";
+import AdminProductsEditPage from "./pages/admin/products/edit";
+import AdminUsersPage from "./pages/admin/users";
+
 const router = new Navigo("/", {
     linksSelector: "a",
     hash: true
@@ -49,7 +52,10 @@ router.on({
     "/admin/news/add": () => print(AdminNewsAddPage),
     "/admin/products": () => print(AdminProductPage),
     "/admin/products/add": () => print(AdminProductsAddPage),
-
+    "/admin/products/:id/edit": ({
+        data
+    }) => print(AdminProductsEditPage, data.id),
+    "/admin/users": () => print(AdminUsersPage),
     "/signup": () => print(Signup),
     "/signin": () => print(Signin),
     "/cart": () => print(CartPage),

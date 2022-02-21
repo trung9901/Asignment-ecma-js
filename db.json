@@ -28,30 +28,6 @@
       "id": "4"
     },
     {
-      "title": "xczxv",
-      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1644892052/img_upload/rr5jdwm3g048wvbx1l06.jpg",
-      "desc": "sdzxcvzxv",
-      "id": "2zAkOZn"
-    },
-    {
-      "title": "cvvbcvb",
-      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1644892493/img_upload/arwz8vyghwplqpojaqws.jpg",
-      "desc": "xcbxcvb",
-      "id": "GUMH1Ia"
-    },
-    {
-      "title": "1233124a",
-      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645357392/img_upload/jl2aqe9telr9ckpq759b.jpg",
-      "desc": "fgdfhdfgh",
-      "id": "Zw7Papx"
-    },
-    {
-      "title": "999ád",
-      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645357407/img_upload/gjyshmazo3eosqolztcm.jpg",
-      "desc": "acxv",
-      "id": "v25ah0W"
-    },
-    {
       "title": "1233124",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645368618/img_upload/tqhnyvuk06v8jtuddzks.jpg",
       "desc": "12323",
@@ -62,27 +38,9 @@
       "title": "bai viet moi them1",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645371347/img_upload/jiyovwhdgheyosembp7n.jpg",
       "desc": "zxcsadgcfv111"
-    },
-    {
-      "id": "SV5EIRs",
-      "title": "zxc",
-      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645371427/img_upload/sveqjqeyoviqrse9qneo.jpg",
-      "desc": "xc234"
-    },
-    {
-      "title": "m",
-      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645371976/img_upload/asfp4eemjgao5jav9xtc.jpg",
-      "desc": "xczxcxv",
-      "id": "y7xf9eE"
     }
   ],
   "users": [
-    {
-      "email": "trungnhph13487@fpt.edu.vn",
-      "password": "12345678",
-      "username": "trungnhph13487",
-      "id": 2
-    },
     {
       "email": "trung9901@gmail.com",
       "password": "$2a$10$C9wAAMtTPq5Qvpl0ARSxJ.DUP.buiazkTzeiZWq2hyJrECQDtD8G2",
@@ -90,20 +48,20 @@
       "id": 1
     },
     {
-      "email": "trung9902@gmail.com",
-      "password": "$2a$10$X.Glz93g0i9nT2zLyoLnYuPjL9Hy2TJQSyvrt./KYOq.ysH4rwguG",
-      "username": "zsdsfasf",
-      "id": 3
+      "email": "trung002@gmail.com",
+      "password": "$2a$10$rsb/0K/8IDWD/uZRJ6NI2eTx7TmAWDmrXzGWaExD7CLRgSU6bWTiK",
+      "username": "trung002",
+      "id": 5
     }
   ],
   "products": [
     {
-      "productname": "san pham 1",
-      "img": "https://picsum.photos/200/200",
+      "id": "1",
+      "productname": "san pham update",
       "price": "500000",
       "discount": "20",
       "quantity": "100",
-      "id": "1"
+      "img": "https://picsum.photos/200/200"
     },
     {
       "productname": "san pham 2",
@@ -242,12 +200,12 @@
       "id": "NNMX_2x"
     },
     {
-      "productname": "ádasfasf",
-      "price": "123214",
-      "discount": "13",
-      "quantity": "1",
-      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645367244/img_upload/bsv9cmzl2bapffvjykyh.jpg",
-      "id": "Jvrxgnf"
+      "id": "Jvrxgnf",
+      "productname": "test",
+      "price": "900000",
+      "discount": "50",
+      "quantity": "200",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645372961/img_upload/dsftrftxjkqwlbjuonmn.jpg"
     }
   ],
   "blog": [

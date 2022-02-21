@@ -5,7 +5,7 @@ import {
 import {
   decreaseItemInCart,
   increaseItemInCart,
-  removeItemInCart
+  removeItemInCart,
 } from "../utils/cart";
 import toastr from 'toastr';
 import "toastr/build/toastr.min.css";
@@ -36,7 +36,7 @@ const CartPage = {
                         <div class="px-5">
                           <h3>${item.productname}</h3>
                           
-                          <span class="text-red-600 mt-3">Giá:  ${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format((item.price)-(((item.price)*(item.discount))/100))}</span>
+                          <span class="text-red-600 mt-3">Giá:  ${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format((item.price) - (((item.price) * (item.discount)) / 100))}</span>
                           <div class="flex
                            mt-3">
                             <button data-id="${item.id}" class="btn btn-decrease px-2 py-1 border rounded-l-lg"><i
@@ -49,7 +49,7 @@ const CartPage = {
                         </div>
                       </div>
                       <div class="">
-                        <span class="block font-bold text-red-600 text-lg" >${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(((item.price)-(((item.price)*(item.discount))/100))*(item.quantity))} <input id="price" type="hidden" name="" value="${((item.price)-(((item.price)*(item.discount))/100))*(item.quantity)}"></span>
+                        <span class="block font-bold text-red-600 text-lg" id="sum-price" >${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(((item.price) - (((item.price) * (item.discount)) / 100)) * (item.quantity))} <input id="sum-price-input" type="hidden" name="" value="${((item.price) - (((item.price) * (item.discount)) / 100)) * (item.quantity)}"></span>
                         <button data-id="${item.id}"
                           class="btn btn-remove block  float-right mt-8 border border-red-600 rounded px-3 py-2 text-sm text-red-500 hover:bg-red-600 hover:text-white">xóa</button>
                       </div>
@@ -59,8 +59,8 @@ const CartPage = {
                   </section>
                   <section class="col-span-4">
                     <div class="bg-yellow-400 border-0 rounded-lg p-5 flex justify-between ">
-                      <span class="text-white font-bold uppercase text-xl align-middle">TỔNG</span>
-                      <h1 class="text-white font-bold text-2xl align-middle" id="tt"> ₫</h1>
+                      <span class="text-white font-bold uppercase text-xl align-middle">TỔNG:</span>
+                      <h1 class="text-white font-bold text-2xl align-middle" id="sum-price-output"> ₫</h1>
                     </div>
                     <div
                       class="my-6 py-2 w-full border rounded-lg border-red-600 text-center hover:bg-red-600 hover:text-white text-red-600 uppercase font-bold">
@@ -93,19 +93,23 @@ const CartPage = {
         `
   },
   afterRender() {
-    const quantity = document.querySelector('#quantity');
-    const price = document.querySelector('#price');
-    const tt = document.querySelector('#tt');
-    Header.afterRender();
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    const output = document.querySelector('#sum-price-output');
+    let sum = 0;
+    for (let i = 0; i < cart.length; i++) {
+      let percent = (cart[i].price - ((cart[i].price * cart[i].discount) / 100)) * cart[i].quantity;
+      sum += percent
+      output.innerHTML = sum.toLocaleString('de-DE') + '₫'
+    }
+
     // ---------------------    
+    Header.afterRender();
     const btns = document.querySelectorAll('.btn');
     btns.forEach(btn => {
       const id = btn.dataset.id;
       btn.addEventListener('click', () => {
         if (btn.classList.contains('btn-increase')) {
-          // -------
 
-          // ---------
           increaseItemInCart(id, () => reRender(CartPage, "#app"))
         } else if (btn.classList.contains('btn-decrease')) {
           decreaseItemInCart(id, () => reRender(CartPage, "#app"))

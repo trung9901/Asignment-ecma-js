@@ -1,68 +1,61 @@
 import {
     signup
 } from "../api/user";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 const Signup = {
     render() {
-        return `
-                <!-- component -->
-                <div class="bg-gray-300 min-h-screen flex flex-col">
-                            <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-                                <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
-                                    <h1 class="mb-8 text-3xl text-center">Sign up</h1>
-                                    <form id="formSignup">
-                                    <input 
-                                        type="text" id="username"
-                                        class="block border border-grey-light w-full p-3 rounded mb-4"
-                                        name="fullname"
-                                        placeholder="Full Name" />
-                
-                                    <input 
-                                        type="email" id="email"
-                                        class="block border border-grey-light w-full p-3 rounded mb-4"
-                                        name="email"
-                                        placeholder="Email" />
-                
-                                    <input 
-                                        type="password" id="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="password" placeholder="password" />
-
-                                    <button
-                                        type="submit"
-                                        class="w-full text-center py-3 rounded bg-green-600 text-white hover:bg-green-700 focus:outline-none my-1"
-                                    >Create Account</button>
-                
-                                    <div class="text-center text-sm text-grey-dark mt-4">
-                                        By signing up, you agree to the 
-                                        <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-                                            Terms of Service
-                                        </a> and 
-                                        <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-                                            Privacy Policy
-                                        </a>
-                                    </div>
-                                    </form>
-                                </div>
-                
-                                <div class="text-grey-dark mt-6">
-                                    Already have an account? 
-                                    <a class="no-underline border-b border-blue text-blue" href="/signin">
-                                        Log in
-                                    </a>.
-                                </div>
-                            </div>
-                        </div>
+        return /* html */ `
+        <div class="h-screen bg-indigo-100 flex justify-center items-center">
+        <div class="lg:w-2/5 md:w-1/2 w-2/3">
+          <form id="formSignup" class="bg-white p-10 rounded-lg shadow-lg min-w-full">
+            <h1 class="text-center text-2xl mb-6 text-gray-600 font-bold font-sans">Đăng ký</h1>
+            <div>
+              <label class="text-gray-800 font-semibold block my-3 text-md" for="">Username</label>
+              <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="username"
+                id="username" placeholder="username" />
+            </div>
+            <div>
+              <label class="text-gray-800 font-semibold block my-3 text-md" for="email">Email</label>
+              <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="email"
+                id="email" placeholder="@email" />
+            </div>
+            <div>
+              <label class="text-gray-800 font-semibold block my-3 text-md" for="password">Password</label>
+              <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="password"
+                id="password" placeholder="password" />
+            </div>
+            <div>
+              <label class="text-gray-800 font-semibold block my-3 text-md" for="confirm">Confirm password</label>
+              <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="confirm"
+                id="confirm" placeholder="confirm password" />
+            </div>
+            <button type="submit"
+              class="w-full mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans">Đăng ký</button>
+            <button type="submit"
+              class="w-full mt-6 mb-3 bg-indigo-100 rounded-lg px-4 py-2 text-lg text-gray-800 tracking-wide font-semibold font-sans">Đăng nhập</button>
+          </form>
+        </div>
+      </div>
         `
     },
     afterRender() {
-        const formSignup = document.querySelector('#formSignup');
-        formSignup.addEventListener('submit', function (e) {
+        const formSignup = document.querySelector("#formSignup");
+        formSignup.addEventListener("submit", (e) => {
             e.preventDefault();
-
+            // call api
             signup({
-                username: document.querySelector('#username').value,
-                email: document.querySelector('#email').value,
-                password: document.querySelector('#password').value
-            })
-        })
+                username: document.querySelector("#username").value,
+                email: document.querySelector("#email").value,
+                password: document.querySelector("#password").value,
+
+            });
+            setTimeout(() => {
+                window.location.href = "/#/signin";
+            }, 1000)
+            toastr.success("Đăng ký thành công chuyển tới trang đăng nhập")
+
+        });
     }
 }
 export default Signup;
