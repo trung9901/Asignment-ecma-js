@@ -38,6 +38,12 @@
       "title": "bai viet moi them1",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645371347/img_upload/jiyovwhdgheyosembp7n.jpg",
       "desc": "zxcsadgcfv111"
+    },
+    {
+      "title": "",
+      "img": "",
+      "desc": "",
+      "id": "dkzcd9L"
     }
   ],
   "users": [
@@ -206,6 +212,22 @@
       "discount": "50",
       "quantity": "200",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645372961/img_upload/dsftrftxjkqwlbjuonmn.jpg"
+    },
+    {
+      "productname": "zsdasd",
+      "price": "",
+      "discount": "",
+      "quantity": "1",
+      "img": "",
+      "id": "py6ckIS"
+    },
+    {
+      "productname": "123",
+      "price": "123",
+      "discount": "13",
+      "quantity": "1",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645421912/img_upload/ujx9b2wvwbzlmso3f08e.jpg",
+      "id": "vKsdo3N"
     }
   ],
   "blog": [
