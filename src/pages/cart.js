@@ -62,9 +62,9 @@ const CartPage = {
                       <span class="text-white font-bold uppercase text-xl align-middle">TỔNG:</span>
                       <h1 class="text-white font-bold text-2xl align-middle" id="sum-price-output"> ₫</h1>
                     </div>
-                    <div
-                      class="my-6 py-2 w-full border rounded-lg border-red-600 text-center hover:bg-red-600 hover:text-white text-red-600 uppercase font-bold">
-                      thanh toán
+                    <div>
+                    <a href="/#/checkout"><button class="my-6 py-2 w-full border rounded-lg border-red-600 text-center hover:bg-red-600 hover:text-white text-red-600 uppercase font-bold">thanh toán</button></a> 
+                      
                     </div>
                     <div class="border border-dashed rounded-lg border-red-600 mt-5 bg-red-50 p-2">
                       <h5 class="border-2 rounded-full border-red-600 p-1 px-3 w-fit text-red-600 font-bold "><i
@@ -101,7 +101,7 @@ const CartPage = {
       sum += percent
       output.innerHTML = sum.toLocaleString('de-DE') + '₫'
     }
-
+    console.log(cart.length)
     // ---------------------    
     Header.afterRender();
     const btns = document.querySelectorAll('.btn');
@@ -109,14 +109,18 @@ const CartPage = {
       const id = btn.dataset.id;
       btn.addEventListener('click', () => {
         if (btn.classList.contains('btn-increase')) {
-
           increaseItemInCart(id, () => reRender(CartPage, "#app"))
         } else if (btn.classList.contains('btn-decrease')) {
           decreaseItemInCart(id, () => reRender(CartPage, "#app"))
         } else {
           removeItemInCart(id, () => {
-            reRender(CartPage, "#app");
+            reRender(CartPage, "#app")
             toastr.success("Bạn đã xóa sản phẩm thành công");
+            if (cart.length === 1) {
+              localStorage.removeItem('cart');
+              document.location.href = "/#/"
+            }
+
           })
         }
       })

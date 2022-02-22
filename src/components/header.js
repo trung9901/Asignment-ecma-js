@@ -1,6 +1,11 @@
 import {
     reRender
 } from '../utils/rerender';
+
+import toastr from 'toastr';
+import "toastr/build/toastr.min.css";
+
+
 const Header = {
     async render() {
         return /* html */ `
@@ -14,8 +19,10 @@ const Header = {
                     </figure>
                     <div class="col-span-6 ml-10">
                         <div class="flex justify-around ">
+                        <form action="/search">
                             <div class="flex  ">
-                                <input type="text" class="px-4 py-2 w-[500px] h-[45px] rounded-l-lg " placeholder="Tìm kiếm...">
+                            
+                                <input type="text" class="px-4 py-2 w-[500px] h-[45px] rounded-l-lg " placeholder="Tìm kiếm..." name="keyword">
                                 <button class="flex items-center justify-center px-4 bg-white rounded-r-lg  ">
                                 <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24">
@@ -23,12 +30,13 @@ const Header = {
                                     d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
                                 </svg>
                                 </button>
+                            
                             </div>
-
+                        </form>
                         <div class="flex pt-2">
                             <div class="text-white font-bold " id="check-user">${localStorage.getItem('user') ? `<span class=" hover:text-[#fdbf08]" id="account-email"></span><span class="mx-1">/</span><span id="logout" class=" hover:text-[#fdbf08]"> Đăng xuất</span>` : `<a href="/#/signin" class=" hover:text-[#fdbf08]">Đăng nhập</a><span class="mx-1">/</span><a href="/#/signup" class=" hover:text-[#fdbf08]">Đăng ký</a>`}</div>                      
                             <span class="text-white font-bold mx-4">|</span>
-                            <div class="text-white font-bold hover:text-[#fdbf08]"><a href="/cart" >Giỏ hàng</a></div>
+                            <div class="text-white font-bold hover:text-[#fdbf08]" id="cart">Giỏ hàng</div>
                         </div>
                         </div>
                         <div class="mt-5 mb-5">
@@ -84,6 +92,7 @@ const Header = {
     },
     afterRender() {
         const dashboard = document.querySelector('#dashboard')
+
         if (localStorage.getItem('user')) {
             if (JSON.parse(localStorage.getItem('user')).id === 1) {
                 dashboard.innerHTML = '<a href="/admin/dashboard" title="Liên hệ" target="_blank" class="font-bold p-5 no-underline text-white pl-lg-3 hover:text-[#fdbf08] "> dashboard</a>';
@@ -101,11 +110,27 @@ const Header = {
                 localStorage.removeItem('user');
                 reRender(Header, '#header');
             })
-
         }
+
+        const cart = document.querySelector('#cart')
+        if (cart) {
+            cart.addEventListener('click', function () {
+                if (localStorage.getItem('cart')) {
+                    document.location.href = "/#/cart"
+                }
+                else {
+                    toastr.error("bạn chưa chọn sản phẩm nào")
+                }
+            })
+        }
+
+
 
     }
 
+
 }
+
+
 
 export default Header;

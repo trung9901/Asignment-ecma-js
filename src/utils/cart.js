@@ -40,6 +40,8 @@ export const removeItemInCart = (id, next) => {
     const confirm = window.confirm('Bạn có muốn xóa sản phẩm này không?');
     if (confirm) {
         cart = cart.filter(item => item.id !== id);
+    } else {
+
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     next();

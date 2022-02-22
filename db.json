@@ -1,6 +1,5 @@
 {
-  "posts": [
-    {
+  "posts": [{
       "id": "1",
       "title": "Annie Stroman4",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1644889701/img_upload/x7ifsvlagta26nbhchvn.jpg",
@@ -46,8 +45,7 @@
       "id": "evcXQLV"
     }
   ],
-  "users": [
-    {
+  "users": [{
       "email": "trung9901@gmail.com",
       "password": "$2a$10$C9wAAMtTPq5Qvpl0ARSxJ.DUP.buiazkTzeiZWq2hyJrECQDtD8G2",
       "username": "trung",
@@ -60,126 +58,141 @@
       "id": 5
     }
   ],
-  "products": [
-    {
+  "products": [{
       "id": "1",
       "productname": "san pham update",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "img": "https://picsum.photos/200/200"
+      "img": "https://picsum.photos/200/200",
+      "categoryId": 1
     },
     {
       "productname": "san pham 2",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "2"
+      "id": "2",
+      "categoryId": 1
     },
     {
       "productname": "san pham 3",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "3"
+
+      "id": "3",
+      "categoryId": 1
     },
     {
       "productname": "san pham 4",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "4"
+      "id": "4",
+      "categoryId": 1
     },
     {
       "productname": "san pham 5",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "5"
+      "id": "5",
+      "categoryId": 1
     },
     {
       "productname": "san pham 6",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "6"
+      "id": "6",
+      "categoryId": 2
     },
     {
       "productname": "san pham 7",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "7"
+      "id": "7",
+      "categoryId": 2
     },
     {
       "productname": "san pham 8",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "8"
+      "id": "8",
+      "categoryId": 3
     },
     {
       "productname": "san pham 9",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "9"
+      "id": "9",
+      "categoryId": 3
     },
     {
       "productname": "san pham 10",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "10"
+      "id": "10",
+      "categoryId": 3
     },
     {
       "productname": "san pham 11",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "11"
+      "id": "11",
+      "categoryId": 3
     },
     {
       "productname": "san pham 12",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "12"
+      "id": "12",
+      "categoryId": 3
     },
     {
       "productname": "san pham 13",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "13"
+      "id": "13",
+      "categoryId": 3
     },
     {
       "productname": "san pham 14",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "14"
+      "id": "14",
+      "categoryId": 3
     },
     {
       "productname": "san pham 15",
       "img": "https://picsum.photos/200/200",
       "price": "500000",
-      "discount": "20",
+      "discount": "0",
       "quantity": "100",
-      "id": "15"
+      "id": "15",
+      "categoryId": 3
     },
     {
       "productname": "ádasfasf",
@@ -187,7 +200,8 @@
       "discount": "13",
       "quantity": "1",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645363892/img_upload/ocjbveqy06x2u5psz7pj.jpg",
-      "id": "-pitm_H"
+      "id": "-pitm_H",
+      "categoryId": 3
     },
     {
       "productname": "ádasfasf",
@@ -195,7 +209,8 @@
       "discount": "13",
       "quantity": "1",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645365532/img_upload/zxfbcvnn2xhfdft2a0pc.jpg",
-      "id": "DlJ_tnd"
+      "id": "DlJ_tnd",
+      "categoryId": 1
     },
     {
       "productname": "ádasfasf1",
@@ -203,7 +218,8 @@
       "discount": "19",
       "quantity": "1",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645366890/img_upload/jk2hao3s150elmoh0dan.jpg",
-      "id": "NNMX_2x"
+      "id": "NNMX_2x",
+      "categoryId": 2
     },
     {
       "id": "Jvrxgnf",
@@ -211,7 +227,8 @@
       "price": "900000",
       "discount": "50",
       "quantity": "200",
-      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645372961/img_upload/dsftrftxjkqwlbjuonmn.jpg"
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645372961/img_upload/dsftrftxjkqwlbjuonmn.jpg",
+      "categoryId": 2
     },
     {
       "productname": "zsdasd",
@@ -219,7 +236,8 @@
       "discount": "",
       "quantity": "1",
       "img": "",
-      "id": "py6ckIS"
+      "id": "py6ckIS",
+      "categoryId": 2
     },
     {
       "productname": "123",
@@ -227,11 +245,11 @@
       "discount": "13",
       "quantity": "1",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645421912/img_upload/ujx9b2wvwbzlmso3f08e.jpg",
-      "id": "vKsdo3N"
+      "id": "vKsdo3N",
+      "categoryId": 2
     }
   ],
-  "blog": [
-    {
+  "blog": [{
       "title": "Tặng ngay voucher 300k - Khi mua hàng online tại Mew Mall",
       "img": "https://picsum.photos/100/100",
       "date": "08/12/2021",
@@ -256,8 +274,7 @@
       "id": 4
     }
   ],
-  "category": [
-    {
+  "categories": [{
       "title": "Kệ sách - Kệ Tivi",
       "img": "https://picsum.photos/60/60",
       "id": 1
@@ -276,6 +293,35 @@
       "title": "Gia dụng nhà bếp",
       "img": "https://picsum.photos/60/60",
       "id": 4
+    },
+    {
+      "id": 5,
+      "title": "12351",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645539402/img_upload/d1mn4z7wa6fnywn5xs8r.jpg"
+    },
+    {
+      "title": "12324",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645539248/img_upload/kxil56lwue67evjoewnq.jpg",
+      "id": 6
+    }
+  ],
+  "oders": [{
+      "customername": "1232",
+      "phone": "123",
+      "email": "trung9901@gmail.com",
+      "address": "ád",
+      "city": "ấdasd",
+      "oderprice": "500.000₫",
+      "id": 5
+    },
+    {
+      "customername": "trung",
+      "phone": "23123",
+      "email": "trung9901@gmail.com",
+      "address": "vạn phúc - hà đông",
+      "city": "hà nội",
+      "oderprice": "500.000₫",
+      "id": 6
     }
   ]
 }

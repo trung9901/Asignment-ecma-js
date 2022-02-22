@@ -90,9 +90,9 @@ const AdminNewsAddPage = {
         "desc-post": "required",
       },
       messages: {
-        "title-post": "Nhập tiêu đề bài viết ",
-        "img-post": "Không để trống ảnh",
-        "desc-post": "Nhập mô tả bài viết"
+        "title-post": "<p class='text-red-500'>Nhập tiêu đề bài viết</p> ",
+        "img-post": "<p class='text-red-500'>Không để trống ảnh</p>",
+        "desc-post": "<p class='text-red-500'>Nhập mô tả bài viết</p>"
       },
       submitHandler() {
         async function addNews() {

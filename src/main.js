@@ -14,6 +14,14 @@ import AdminProductPage from "./pages/admin/products"
 import AdminProductsAddPage from "./pages/admin/products/add";
 import AdminProductsEditPage from "./pages/admin/products/edit";
 import AdminUsersPage from "./pages/admin/users";
+import checkoutPage from "./pages/checkout";
+import AdminOdersPage from "./pages/admin/oders";
+import AdminCategoryPage from "./pages/admin/category";
+import AdminCategoryEditPage from "./pages/admin/category/edit";
+import AdminCategoryAddPage from "./pages/admin/category/add";
+import ProductByCatePage from "./pages/products/productbycate"
+
+// import SearchPage from "./pages/products/search";
 
 const router = new Navigo("/", {
     linksSelector: "a",
@@ -24,7 +32,7 @@ const print = async (content, id) => {
     document.getElementById("app").innerHTML = await content.render(id);
     if (content.afterRender) content.afterRender(id);
 };
-router.on("/admin/*", () => {}, {
+router.on("/admin/*", () => { }, {
     before: (done) => {
         if (localStorage.getItem('user')) {
             const userId = JSON.parse(localStorage.getItem('user')).id;
@@ -39,11 +47,17 @@ router.on("/admin/*", () => {}, {
 
     }
 })
+
 router.on({
     "/": () => print(HomePage),
     "/about": () => print(AboutPage),
+
+    //product
     "/products/details/:id": (value) => print(DetailProductPage, value.data.id),
     "/products": () => print(ProductPage),
+    "/productbycate/:id": ({ data }) => print(ProductByCatePage, data.id),
+
+    //admin
     "/admin/dashboard": () => print(DashboardPage),
     "/admin/news": () => print(AdminNewsPage),
     "/admin/news/:id/edit": ({
@@ -56,9 +70,22 @@ router.on({
         data
     }) => print(AdminProductsEditPage, data.id),
     "/admin/users": () => print(AdminUsersPage),
+    "/admin/oders": () => print(AdminOdersPage),
+    "/admin/category": () => print(AdminCategoryPage),
+    "/admin/category/add": () => print(AdminCategoryAddPage),
+    "/admin/category/:id/edit": ({
+        data
+    }) => print(AdminCategoryEditPage, data.id),
+
+    //user
     "/signup": () => print(Signup),
     "/signin": () => print(Signin),
     "/cart": () => print(CartPage),
+    "/checkout": () => print(checkoutPage),
+
+    // search
+
+    "/search": ({ params }) => print(SearchPage, params),
 
 });
 router.resolve();
