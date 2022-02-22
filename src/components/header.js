@@ -21,7 +21,6 @@ const Header = {
                         <div class="flex justify-around ">
                         <form action="/search">
                             <div class="flex  ">
-                            
                                 <input type="text" class="px-4 py-2 w-[500px] h-[45px] rounded-l-lg " placeholder="Tìm kiếm..." name="keyword">
                                 <button class="flex items-center justify-center px-4 bg-white rounded-r-lg  ">
                                 <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"

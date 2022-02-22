@@ -21,8 +21,10 @@ export const update = (products) => {
     const url = `/products/${products.id}`;
     return instance.put(url, products);
 }
+
+
 export const SearchProductByName = (keyword) => {
-    const url = `/products?name_like=${keyword}`;
+    const url = `/products?productname_like=${keyword}`;
     return instance.get(url);
 };
 

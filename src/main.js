@@ -21,7 +21,7 @@ import AdminCategoryEditPage from "./pages/admin/category/edit";
 import AdminCategoryAddPage from "./pages/admin/category/add";
 import ProductByCatePage from "./pages/products/productbycate"
 
-// import SearchPage from "./pages/products/search";
+import SearchPage from "./pages/products/search";
 
 const router = new Navigo("/", {
     linksSelector: "a",
@@ -84,7 +84,6 @@ router.on({
     "/checkout": () => print(checkoutPage),
 
     // search
-
     "/search": ({ params }) => print(SearchPage, params),
 
 });
