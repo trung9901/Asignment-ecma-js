@@ -8,6 +8,7 @@ import {
 } from "../../../utils/rerender";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+import $ from 'jquery';
 
 const AdminOdersPage = {
     async render() {
@@ -84,10 +85,11 @@ const AdminOdersPage = {
                                         <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="">
                                         <select id="status" class="border rounded-lg w-fit text-sm text-gray-600">
-                                          <option value="0" class=" text-sm text-gray-600 p-1">Đang xử lí</option>
-                                          <option value="1" selected class=" text-sm text-gray-600 mt-1">Đã xác nhận</option>
-                                          <option value="2" class="text-sm text-gray-600 ">Đang giao hàng</option>
-                                          <option value="3" class="text-sm text-gray-600 ">Giao hàng thành công</option>
+                                          <option value="0" class=" text-sm text-gray-600 p-1"></option>
+                                          <option value="1" class=" text-sm text-gray-600 p-1">Đang xử lí</option>
+                                          <option value="2" selected class=" text-sm text-gray-600 mt-1">Đã xác nhận</option>
+                                          <option value="3" class="text-sm text-gray-600 ">Đang giao hàng</option>
+                                          <option value="4" class="text-sm text-gray-600 ">Giao hàng thành công</option>
                                         </select></div>
                                         </td>
 
@@ -112,6 +114,7 @@ const AdminOdersPage = {
     },
     afterRender() {
         const buttons = document.querySelectorAll('.btn');
+
         buttons.forEach(button => {
             const id = button.dataset.id;
             button.addEventListener('click', () => {
@@ -130,6 +133,11 @@ const AdminOdersPage = {
                 }
 
             })
+        });
+        const status = $('#status');
+
+        status.change(function () {
+            const selectedValue = $(this).val();
         });
     }
 }

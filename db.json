@@ -82,7 +82,6 @@
       "price": "500000",
       "discount": "0",
       "quantity": "100",
-
       "id": "3",
       "categoryId": 1
     },
@@ -306,6 +305,7 @@
     }
   ],
   "oders": [{
+      "status": "Đã xác nhận",
       "customername": "1232",
       "phone": "123",
       "email": "trung9901@gmail.com",
@@ -315,6 +315,7 @@
       "id": 5
     },
     {
+      "status": "Đã xác nhận",
       "customername": "trung",
       "phone": "23123",
       "email": "trung9901@gmail.com",
@@ -322,6 +323,16 @@
       "city": "hà nội",
       "oderprice": "500.000₫",
       "id": 6
+    },
+    {
+      "status": "Đã xác nhận",
+      "customername": "trung",
+      "phone": "0981254223",
+      "email": "trung9901@gmail.com",
+      "address": "van phuc - ha dong ",
+      "city": "ha noi",
+      "oderprice": "11.000.000₫",
+      "id": 7
     }
   ]
 }
