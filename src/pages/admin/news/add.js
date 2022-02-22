@@ -45,17 +45,17 @@ const AdminNewsAddPage = {
                 <form action="" id="form-add-post">
                     <div>
                     <label for="" class=" block text-lg text-gray-700 font-medium">Tiêu đề</label>
-                    <input type="text" placeholder="Tiêu đề bài viết" class="border border-gray-300 rounded py-1 px-3" id="title-post">
+                    <input type="text" placeholder="Tiêu đề bài viết" class="border border-gray-300 rounded py-1 px-3" id="title-post" name="title-post">
                     </div>
                     <div class="py-2">
                      <label for=""  class=" block text-lg text-gray-700 font-medium">Hình ảnh</label>
-                     <input type="file" class="border border-gray-300 rounded" id="img-post">
+                     <input type="file" class="border border-gray-300 rounded" id="img-post" name="img-post">
                      
                     </div>
                     
                     <div class="py-2">
                       <label for=""  class=" block text-lg text-gray-700 font-medium">Mô tả</label>
-                      <textarea name="" id="desc-post" cols="30" rows="10" class="border border-gray-300 rounded w-96 p-1"></textarea>
+                      <textarea name="desc-post" id="desc-post" cols="30" rows="10" class="border border-gray-300 rounded w-96 p-1"></textarea>
                         
                     </div>
                     <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">                            <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,6 +84,16 @@ const AdminNewsAddPage = {
     });
 
     formAdd.validate({
+      rules: {
+        "title-post": "required",
+        "img-post": "required",
+        "desc-post": "required",
+      },
+      messages: {
+        "title-post": "Nhập tiêu đề bài viết ",
+        "img-post": "Không để trống ảnh",
+        "desc-post": "Nhập mô tả bài viết"
+      },
       submitHandler() {
         async function addNews() {
           const file = imgPost.files[0];
@@ -118,3 +128,12 @@ const AdminNewsAddPage = {
   }
 };
 export default AdminNewsAddPage;
+// fixAdd
+
+
+// submitHandle: () => {
+//   async function handleAddProduct(){
+//      // code in here
+//   }
+//   handleAddProduct()
+// }

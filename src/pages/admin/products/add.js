@@ -47,25 +47,20 @@ const AdminProductsAddPage = {
                                 <div class="grid grid-cols-3 gap-6">
                                 <div class="sm:col-span-1">
                                     <label for="company-website" class="block text-base font-medium text-gray-700"> Tên sản phẩm </label>
-                                    <input type="text" name="" id="name-products" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-1 border border-gray-300 rounded-md" required>
+                                    <input type="text" name="name-products" id="name-products" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-1 border border-gray-300 rounded-md" required>
                                 </div>
 
                                 </div>
                                 <div class="grid grid-cols-3 gap-6">
                                 <div class="sm:col-span-1">
                                 <label for="" class="block font-medium text-gray-700"> Đơn Giá (đ)</label>
-                                <input type="number" name="" id="price-products" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-1 border border-gray-300 rounded-md" placeholder=" VNĐ">
+                                <input type="number" name="price-products" id="price-products" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-1 border border-gray-300 rounded-md" placeholder=" VNĐ">
                               
                                 </div>
 
                                 <div class="sm:col-span-1">
-                                <label for="" class="block font-medium text-gray-700"> Giảm Giá (%)</label>
-                                <input type="number" name="" id="discount-products" min="0" max="100" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-1 border border-gray-300 rounded-md "placeholder=" %">
-                          
-                                </div>
-                                <div class="sm:col-span-1">
                                 <label for="" class="block font-medium text-gray-700"> Số lượng</label>
-                                <input type="number" name="" id="quantity-products" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-1 border border-gray-300 rounded-md "placeholder=" " value="1">
+                                <input type="number" name="quantity-products" id="quantity-products" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-1 border border-gray-300 rounded-md "placeholder=" " value="1">
                           
                                 </div>
                                 </div>
@@ -74,7 +69,7 @@ const AdminProductsAddPage = {
                                 <label class="block font-medium text-gray-700"> Ảnh sản phẩm </label>
                                     <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                         <div class="flex justify-between ">
-                                            <div><input type="file" name="" id="img-products" class=""></div>
+                                            <div><input type="file" name="img-products" id="img-products" class=""></div>
                                             
                                             <div><img id="previewImage"  src="https://2.bp.blogspot.com/-muVbmju-gkA/Vir94NirTeI/AAAAAAAAT9c/VoHzHZzQmR4/s580/placeholder-image.jpg" alt="" width="200"></div>
                                             
@@ -109,6 +104,21 @@ const AdminProductsAddPage = {
         });
 
         formAdd.validate({
+            rules: {
+                "name-products": "required",
+                "img-products": "required",
+                "price-products": "required",
+                "quantity-products": "required",
+
+
+            },
+            messages: {
+                "name-products": "Nhập tên sản phẩm",
+                "img-products": "Nhập ảnh sản phẩm",
+                "price-products": "Nhập giá sản phẩm",
+                "quantity-products": "Nhập số lượng",
+
+            },
             submitHandler() {
                 async function addProduct() {
                     const file = imgProducts.files[0];
