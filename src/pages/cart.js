@@ -1,7 +1,9 @@
 import {
   reRender
 } from "../utils/rerender";
-
+import {
+  getAll
+} from '../api/product'
 import {
   decreaseItemInCart,
   increaseItemInCart,
@@ -11,15 +13,18 @@ import toastr from 'toastr';
 import "toastr/build/toastr.min.css";
 import Footer from "../components/footer";
 import Header from "../components/header";
-
+import $ from 'jquery';
+import validate from "jquery-validation"
 
 const CartPage = {
   async render() {
     let cart = [];
     if (localStorage.getItem('cart')) {
       cart = JSON.parse(localStorage.getItem('cart'));
-
     }
+    const {
+      data
+    } = await getAll();
     return `
                 <div class="w-auto bg-[#f4f4f4] ">
                 <header class="" id="header">
@@ -41,7 +46,8 @@ const CartPage = {
                            mt-3">
                             <button data-id="${item.id}" class="btn btn-decrease px-2 py-1 border rounded-l-lg"><i
                                 class="fa-solid fa-minus"></i></button>
-                            <input type="number" value="${item.quantity}" class="border-y text-center w-20" id="quantity" />
+                              
+                            <input type="number" value="${item.quantity}" class="border-y text-center w-20" id="quantity" max="${data.quantity}" name="quantity" required />
                             <button data-id="${item.id}" class="btn btn-increase px-2 py-1 border rounded-r-lg "><i
                                 class="fa-solid fa-plus"></i></button>
                           </div>
@@ -104,6 +110,7 @@ const CartPage = {
     console.log(cart.length)
     // ---------------------    
     Header.afterRender();
+
     const btns = document.querySelectorAll('.btn');
     btns.forEach(btn => {
       const id = btn.dataset.id;
