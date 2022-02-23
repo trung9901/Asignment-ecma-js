@@ -63,8 +63,23 @@ const AdminProductsAddPage = {
                                 <input type="number" name="quantity-products" id="quantity-products" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-1 border border-gray-300 rounded-md "placeholder=" " value="1">
                           
                                 </div>
+
+                                <div class="sm:col-span-1">
+                                <label for="" class="block font-medium text-gray-700">Danh mục</label>
+                                
+                                <select name="categories" id="categories" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-1 border border-gray-300 rounded-md ">
+                                    <option value="1">Kệ sách - Kệ Tivi</option>
+                                    <option value="2">Thức ăn cho pet</option>
+                                    <option value="3">Thiết bị gia đình</option>
+                                    <option value="4">Gia dụng nhà bếp</option>
+                                </select>
                                 </div>
 
+
+                                </div>
+
+                                
+                                
                                 <div>
                                 <label class="block font-medium text-gray-700"> Ảnh sản phẩm </label>
                                     <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -92,6 +107,29 @@ const AdminProductsAddPage = {
         `
     },
     afterRender() {
+        // const select = $("#categories").change(function () {
+        //     console.log(select[0][2].value)
+        // });
+        // $("select").change(function () {
+        //     var str = "";
+        //     $("select option:selected").each(function () {
+        //         str += $(this).val(); + " ";
+        //     });
+        //     console.log(str);
+        // }).change();
+
+        // $("select").change(function () {
+        //     var str = "";
+        //     $("select option:selected").each(function () {
+        //         str += $(this).val();
+
+        //     });
+
+        //     // console.log(str);
+        // }).change();
+        // console.log(change());
+
+        // -------------------------
         const formAdd = $('#form-add-products');
         const imgProducts = document.querySelector("#img-products");
         const imgPreview = document.querySelector('#previewImage');
@@ -119,8 +157,10 @@ const AdminProductsAddPage = {
                 "quantity-products": "<p class='text-red-500'>Nhập số lượng</p>",
             },
             submitHandler() {
+
                 async function addProduct() {
                     const file = imgProducts.files[0];
+
                     if (file) {
                         const formData = new FormData();
 
@@ -139,8 +179,8 @@ const AdminProductsAddPage = {
                     add({
                         "productname": document.querySelector("#name-products").value,
                         "price": document.querySelector("#price-products").value,
-                        "discount": document.querySelector("#discount-products").value,
                         "quantity": document.querySelector("#quantity-products").value,
+                        // "categoryId": 4,
                         "img": imgLink || "",
                     }).then(async (res) => {
                         document.location.href = "/#/admin/products";

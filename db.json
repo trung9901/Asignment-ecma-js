@@ -240,6 +240,20 @@
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645421912/img_upload/ujx9b2wvwbzlmso3f08e.jpg",
       "id": "vKsdo3N",
       "categoryId": 2
+    },
+    {
+      "productname": "san pham moi them",
+      "price": "123",
+      "quantity": "1123",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645594203/img_upload/hamwrh73u22dkasoo0ox.jpg",
+      "id": "V-rgpzb"
+    },
+    {
+      "productname": "san pham moi them 2",
+      "price": "123124124",
+      "quantity": "12",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645594369/img_upload/gewzytr4ice83iapyd3t.jpg",
+      "id": "oPGT7O8"
     }
   ],
   "blog": [
@@ -298,6 +312,11 @@
       "title": "12324",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645539248/img_upload/kxil56lwue67evjoewnq.jpg",
       "id": 6
+    },
+    {
+      "title": "sdfas",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645594133/img_upload/fungtmnmeck4hikvesib.jpg",
+      "id": 7
     }
   ],
   "oders": [
@@ -330,6 +349,15 @@
       "city": "ha noi",
       "oderprice": "11.000.000₫",
       "id": 7
+    },
+    {
+      "customername": "trung",
+      "phone": "123123",
+      "email": "trung9901@gmail.com",
+      "address": "ádasd",
+      "city": "123",
+      "oderprice": "108.115.669₫",
+      "id": 8
     }
   ],
   "slides": [

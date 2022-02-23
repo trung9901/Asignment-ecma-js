@@ -35,7 +35,7 @@ const Contents = {
                             <div class="pt-1 py-3 "><a href="/products/details/${products.id}" class="no-underline "><span
                                 class="text-[#4c4c4c] font-bold hover:text-[#f53d2d]">${products.productname}</span></a></div>
                             <div class="">
-                            <span class="font-bold text-[#f53d2d]">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format((products.price) - (((products.price) * (products.discount)) / 100))}</span>
+                            <span class="font-bold text-[#f53d2d]">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(products.price)}</span>
                             <span class="line-through text-sm pl-1">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(products.price)}</span>
                             
                             </div>

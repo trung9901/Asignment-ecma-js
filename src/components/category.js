@@ -9,7 +9,7 @@ const Category = {
                 <div class="flex gap-5">
                 <div class="pt-8 pb-3 flex gap-x-12">
                     ${data.map((category) => `
-                    <a href="/productbycate/${category.id}" class="">
+                    <a href="/#/productbycate/${category.id}" class="">
                     <div class="flex justify-center"><img src="${category.img}" alt="" class="rounded-[20px] " width="60">
                     </div>
 
