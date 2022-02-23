@@ -1,4 +1,4 @@
-import Banner from "./banner";
+import Blog from "./blog";
 import {
     getAll
 } from '../api/product';
@@ -19,7 +19,7 @@ const Contents = {
         } = await getAll();
         return /* html */ `
                 <div class="w-[1350px] mx-auto ">
-                ${await Banner.render()}
+                ${await Blog.render()}
                 ${await Category.render()}
                 <section class="flex gap-6 mt-5">
                     <div class=""><img src="https://picsum.photos/434/220" alt="" class="rounded-lg"></div>
@@ -35,7 +35,7 @@ const Contents = {
                             <div class="pt-1 py-3 "><a href="/products/details/${products.id}" class="no-underline "><span
                                 class="text-[#4c4c4c] font-bold hover:text-[#f53d2d]">${products.productname}</span></a></div>
                             <div class="">
-                            <span class="font-bold text-[#f53d2d]">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format((products.price)-(((products.price)*(products.discount))/100))}</span>
+                            <span class="font-bold text-[#f53d2d]">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format((products.price) - (((products.price) * (products.discount)) / 100))}</span>
                             <span class="line-through text-sm pl-1">${new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(products.price)}</span>
                             
                             </div>

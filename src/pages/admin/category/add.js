@@ -25,7 +25,7 @@ const AdminCategoryAddPage = {
                             <h2
                             class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate"
                             >
-                            Cập nhật Danh Mục Sản Phẩm
+                            Thêm Danh Mục Sản Phẩm
                             </h2>
                         </div>
                         <div class="mt-5 flex lg:mt-0 lg:ml-4">

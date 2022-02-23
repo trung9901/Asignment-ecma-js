@@ -19,7 +19,9 @@ import AdminOdersPage from "./pages/admin/oders";
 import AdminCategoryPage from "./pages/admin/category";
 import AdminCategoryEditPage from "./pages/admin/category/edit";
 import AdminCategoryAddPage from "./pages/admin/category/add";
-import ProductByCatePage from "./pages/products/productbycate"
+import ProductByCatePage from "./pages/products/productbycate";
+import AdminSlidePage from "./pages/admin/slide";
+import AdminSlideAddPage from "./pages/admin/slide/add";
 
 import SearchPage from "./pages/products/search";
 
@@ -76,7 +78,11 @@ router.on({
     "/admin/category/:id/edit": ({
         data
     }) => print(AdminCategoryEditPage, data.id),
-
+    "/admin/slides": () => print(AdminSlidePage),
+    "/admin/slides/add": () => print(AdminSlideAddPage),
+    "/admin/slides/:id/edit": ({
+        data
+    }) => print(AdminSlideEditPage, data.id),
     //user
     "/signup": () => print(Signup),
     "/signin": () => print(Signin),

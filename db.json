@@ -1,5 +1,6 @@
 {
-  "posts": [{
+  "posts": [
+    {
       "id": "1",
       "title": "Annie Stroman4",
       "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1644889701/img_upload/x7ifsvlagta26nbhchvn.jpg",
@@ -45,7 +46,8 @@
       "id": "evcXQLV"
     }
   ],
-  "users": [{
+  "users": [
+    {
       "email": "trung9901@gmail.com",
       "password": "$2a$10$C9wAAMtTPq5Qvpl0ARSxJ.DUP.buiazkTzeiZWq2hyJrECQDtD8G2",
       "username": "trung",
@@ -58,7 +60,8 @@
       "id": 5
     }
   ],
-  "products": [{
+  "products": [
+    {
       "id": "1",
       "productname": "san pham update",
       "price": "500000",
@@ -230,15 +233,6 @@
       "categoryId": 2
     },
     {
-      "productname": "zsdasd",
-      "price": "",
-      "discount": "",
-      "quantity": "1",
-      "img": "",
-      "id": "py6ckIS",
-      "categoryId": 2
-    },
-    {
       "productname": "123",
       "price": "123",
       "discount": "13",
@@ -248,7 +242,8 @@
       "categoryId": 2
     }
   ],
-  "blog": [{
+  "blog": [
+    {
       "title": "Tặng ngay voucher 300k - Khi mua hàng online tại Mew Mall",
       "img": "https://picsum.photos/100/100",
       "date": "08/12/2021",
@@ -273,7 +268,8 @@
       "id": 4
     }
   ],
-  "categories": [{
+  "categories": [
+    {
       "title": "Kệ sách - Kệ Tivi",
       "img": "https://picsum.photos/60/60",
       "id": 1
@@ -304,7 +300,8 @@
       "id": 6
     }
   ],
-  "oders": [{
+  "oders": [
+    {
       "status": "Đã xác nhận",
       "customername": "1232",
       "phone": "123",
@@ -333,6 +330,23 @@
       "city": "ha noi",
       "oderprice": "11.000.000₫",
       "id": 7
+    }
+  ],
+  "slides": [
+    {
+      "name": "banner2",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645590021/img_upload/tgsg98wnw0c5e685cc7w.jpg",
+      "id": 2
+    },
+    {
+      "name": "banner2",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645590089/img_upload/t5qxrgaqtslu7l0zjmuq.jpg",
+      "id": 3
+    },
+    {
+      "name": "banner3",
+      "img": "http://res.cloudinary.com/dneaxae9c/image/upload/v1645590198/img_upload/kxn2wlv86kqimk9fd7bc.jpg",
+      "id": 4
     }
   ]
 }
